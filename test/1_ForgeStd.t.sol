@@ -3,7 +3,6 @@ pragma solidity ^0.8.17;
 import "forge-std/Test.sol";
 
 contract ForgeStdTest is Test {
-
     // forge test --match-test test_ConsoleLog
     function test_ConsoleLog() public {
         console2.log("This will be logged to the terminal");
@@ -21,16 +20,12 @@ contract ForgeStdTest is Test {
 
         console2.log("on fixed bytes");
         assertEq(bytes32("on fixed bytes"), bytes32("on fixed bytes"));
-        
+
         console2.log("on numbers");
         assertEq(uint256(1), uint256(1));
 
         console2.log("on addresses");
-        assertEq(
-            address(1),
-            address(1),
-            "You can also pass an informative string that will be logged if failure"
-        );
+        assertEq(address(1), address(1), "You can also pass an informative string that will be logged if failure");
 
         console2.log("You can assert a statement is true, but this is less preferred");
         assertTrue(!false);
@@ -43,6 +38,4 @@ contract ForgeStdTest is Test {
         console2.log("This can be helpful for asserting results are within any expected margin of error");
         assertEq(stdMath.delta(uint256(0), uint256(1337)), 1337);
     }
-
 }
-

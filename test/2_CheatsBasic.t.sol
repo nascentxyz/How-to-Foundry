@@ -3,8 +3,8 @@ pragma solidity ^0.8.17;
 import "forge-std/Test.sol";
 
 contract Tester {
-
     address bob;
+
     constructor(address _bob) {
         bob = _bob;
     }
@@ -27,6 +27,7 @@ contract CheatsTest is Test {
     Tester test;
 
     address bob;
+
     function setUp() public {
         console2.log("makeAddr creates a new address and labels the address for traces");
         bob = makeAddr("bob");

@@ -3,18 +3,19 @@ pragma solidity ^0.8.17;
 import "forge-std/Test.sol";
 
 contract A {
-	constructor() {}
+    constructor() {}
 }
 
 contract BasicTest is Test {
     uint256 testNumber;
 
     A a;
+
     function setUp() public {
-    	console2.log("setUp is equivalent to `beforeEach`");
-    	console2.log("We can setup any state we need to");
-    	
-    	a = new A();
+        console2.log("setUp is equivalent to `beforeEach`");
+        console2.log("We can setup any state we need to");
+
+        a = new A();
 
         testNumber = 42;
     }
